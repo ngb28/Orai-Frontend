@@ -16,11 +16,11 @@ export class Record extends React.Component {
       <div>
         <Header title="Record"/>
         <div>
-          <h1>Video Recording</h1>
-          <ul>
+          <h1 className='title'>Video Recording</h1>
+          {/* <ul>
             <li>Camera Permission: </li>
             <li>Microphone Permission: </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     );

@@ -1,0 +1,7 @@
+.Login-Header {
+  display: flex;
+  flex-direction: row;
+  color: rgb(0, 45, 78);
+  background-color: #FFF;
+  margin-left: 50px;
+}

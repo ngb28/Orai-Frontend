@@ -3,6 +3,13 @@ import {Header} from '../Header/header';
 import './Sessions.css';
 
 export class Sessions extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sessions:[]
+    }
+  }
+
   getData() {
 
   }
@@ -12,7 +19,12 @@ export class Sessions extends React.Component {
       <div>
         <Header title={"Sessions"}/>
         <div>
-          <h1>Processed Sessions</h1>
+          <h1 className="title">Previous Recordings</h1>
+          <ul className="table-head">
+            <li>Title</li>
+            <li>Date</li>
+            <li>Duration</li>
+          </ul>
         </div>
       </div>
     );

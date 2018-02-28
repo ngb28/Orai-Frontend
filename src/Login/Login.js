@@ -1,19 +1,24 @@
 import React from 'react';
-import {Header} from '../Header/header';
-import './Sessions.css';
+import './Login.css';
+import logo from '../logo.svg';
 
-export class Sessions extends React.Component {
-  getData() {
-
+export class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username:'',
+      password:''
+    }
   }
 
   render() {
     return(
       <div>
-        <Header title={"Sessions"}/>
-        <div>
-          Processed Sessions
-        </div>
+        <h1 className="Login-Header">
+          <img src={logo} className="Orai-Logo" />
+          <h2>Orai</h2>
+        </h1>
+        <button>Login</button>
       </div>
     );
   }

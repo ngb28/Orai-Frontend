@@ -1,0 +1,16 @@
+.title {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.table-head {
+  margin: auto;
+  padding-top: 50px;
+  padding-left: 130px;
+  width: 800px;
+  list-style-type: none;
+  font-size: 150%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
