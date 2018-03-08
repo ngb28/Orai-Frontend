@@ -6,7 +6,7 @@ export class Sessions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sessions:[]
+      sessions:[],
     }
   }
 
