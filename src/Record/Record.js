@@ -58,7 +58,9 @@ export class Record extends React.Component {
           data: this.state.recordVideo.blob,
           id: Math.floor(Math.random()*90000) + 10000
         }
-        this.setState({ recording: false });
+        this.setState({
+           recording: false
+           });
       });
       // still needs code for handling video blob after recording ends
     }
