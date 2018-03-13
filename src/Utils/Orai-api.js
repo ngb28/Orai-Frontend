@@ -21,7 +21,7 @@ function postVideo(video) {
       title: video.title,
       duration: 5
     },
-    data: JSON.stringify(video.data)
+    data: video.data
   }).then(function (response) {
     console.log(response);
   }).catch(function (error) {

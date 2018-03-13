@@ -2,18 +2,15 @@
 
 
 .main-container {
-    float: left;
-    position: relative;
-    left: 50%;
-    margin-top:50px;
+   /* float: right; */
+    /* position: relative; */
+    /* left: 50%; */
+    
   }
 
   .fixer-container {
-    float: left;
+    /* margin-right:350px;  */
+    /* float: left;
     position: relative;
-    left: -50%;
-  }
-
-  #Player{
-    background:'transparent'
+    left: -50%; */
   }
