@@ -1,18 +1,5 @@
 
 
-.video-react .video-react-video {
-    max-width:400px;
-    display: inline-block
-    /* float: center; */
-}
-
-.listclass{
-    /* width: 30%; */
-    /* max-height: 50px ; */
-    /* position: relative; */
-    /* overflow: auto; */
-    /* maxHeight: 300, */
-}
 
 .main-container {
     float: left;
@@ -25,4 +12,8 @@
     float: left;
     position: relative;
     left: -50%;
+  }
+
+  #Player{
+    background:'transparent'
   }
