@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Home} from './home';
 import {Sessions} from './Sessions/Sessions';
-import {Login} from './Login/Login';
+// import {Login} from './Login/Login';
+import {Results} from './Results/Results';
 import {readCookie} from './Login/cookie'
 import {Record} from './Record/Record';
 import {SSO_CREATE_URL,SSOURL} from './constants/index'
@@ -53,9 +54,9 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path={'/Sessions'} component={Sessions} />
-          {/* <Route exact path={'/Results'} component={Results} /> */}
+          <Route exact path={'/Results/:sid'} component={Results} />
           <Route exact path={'/'} component={Home} />
-          <Route exact path={'/Login'} component={Login}/>
+          <Route exact path={'/Login'} component={() => window.location = SSOURL} />
           <Route exact path={'/Record'} component={Record} />
         </Switch>
       </BrowserRouter>
