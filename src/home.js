@@ -12,16 +12,17 @@ export class Home extends React.Component {
 
     }
   }
+  componentWillMount() {
+    
 
-  // upload() {
-  //
-  // }
-
+  }
+  
   render() {
     return(
       <div>
         <Header title={"Home"} />
         <div className = "Up-Rec-Box">
+          <p className='card-header'> Orai Nvrbl Feedback </p>
           <ul className="Upload-Record">
             <li><Link to='/Record'>
             <Button variant="raised" color={'secondary'}>

@@ -9,9 +9,9 @@ export class Header extends React.Component {
     return(
       <header className="header">
         <img src={logo} className="orai-logo" />
-        <h1 className="header-title">
+        <h2 className="header-title">
           {this.props.title}
-        </h1>
+        </h2>
         <Nav />
       </header>
     );

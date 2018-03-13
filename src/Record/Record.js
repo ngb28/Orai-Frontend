@@ -4,7 +4,8 @@ import { captureUserMedia } from './RecordUtils';
 import Webcam from './Webcam';
 import RecordRTC from 'recordrtc';
 import './Record.css';
-
+import Button from 'material-ui/Button';
+import {CircularProgress , LinearProgress } from 'material-ui/Progress';
 const hasGetUserMedia = !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
 navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
@@ -34,7 +35,8 @@ export class Record extends React.Component {
 
     requestUserMedia() {
       captureUserMedia((stream) => {
-        this.setState({ src: window.URL.createObjectURL(stream) });
+        var obj = window.URL.createObjectURL(stream)
+        this.setState({ src: obj  });
       });
     }
 
@@ -72,11 +74,32 @@ export class Record extends React.Component {
           <div>
             <h1 className='title'>Video Recording</h1>
           </div>
-          <div className='record-window'><Webcam src={this.state.src}/></div>
+          <div className='record-window'>
+          {this.state.src?
+            <Webcam src={this.state.src}/>
+            :
+            <CircularProgress size={50} />
+           }
+            </div>
+
+          <div className='start-stop'>
+         
           {this.state.recording ?
-            <div className='status'>Recording...</div> : null}
-          {this.state.recording ?
-            <div className='start-stop'><button onClick={this.stopRecord}>Stop Recording</button></div> : <div className='start-stop'><button onClick={this.startRecord}>Start Recording</button></div>}
+          <div>
+             <LinearProgress color="secondary" />
+            <Button color={"secondary"} fullWidth={true} variant="raised" onClick={this.stopRecord}>
+                Stop Recording
+            </Button>
+            </div>
+          : 
+          <div>
+          <Button variant="raised" style={{backgroundColor:"white"}} fullWidth={true} onClick={this.startRecord}>
+                Start Recording
+           </Button>
+           </div>
+           }
+            {/* <button ></button> */}
+          </div>
         </div>
       )
     }
