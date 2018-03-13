@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Header} from './Header/header';
+import Button from 'material-ui/Button';
+// import RaisedButton from 'material-ui/RaisedButton';
+// import RaisedButton from 'material-ui/RaisedButton';
 
 export class Home extends React.Component {
   constructor(props) {
@@ -20,9 +23,18 @@ export class Home extends React.Component {
         <Header title={"Home"} />
         <div className = "Up-Rec-Box">
           <ul className="Upload-Record">
-            <li><Link to='/Record' style={{textDecoration: 'none'}}>Record</Link></li>
-            <li><p>Or</p></li>
-            <li><button>Upload</button></li>
+            <li><Link to='/Record'>
+            <Button variant="raised" color={'secondary'}>
+                 Record
+           </Button>
+            </Link></li>
+            <li><p style={{color:'black'}}>Or</p></li>
+            <li>
+            <Button variant="raised" >
+                 Upload
+          </Button>
+
+            </li>
           </ul>
         </div>
       </div>
