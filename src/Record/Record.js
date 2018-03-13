@@ -1,6 +1,7 @@
 import React from 'react';
 import {Header} from '../Header/header';
 import { captureUserMedia } from './RecordUtils';
+import {postVideo} from '../Utils/Orai-api';
 import Webcam from './Webcam';
 import RecordRTC from 'recordrtc';
 import './Record.css';
@@ -48,6 +49,7 @@ export class Record extends React.Component {
       });
 
       //Stop recording after 5 minutes
+      //change to designated recordRTC timer function at some point
       setTimeout(() => {
         this.stopRecord();
       }, 300000);
@@ -55,16 +57,23 @@ export class Record extends React.Component {
 
     stopRecord() {
       this.state.recordVideo.stopRecording(() => {
-        let params = {
-          type: 'video/webm',
-          data: this.state.recordVideo.blob,
-          id: Math.floor(Math.random()*90000) + 10000
+        //this.save('test-recording');
+        var blob = this.state.recordVideo.getBlob();
+        var file = new File([blob], 'test.webm', {
+          type: 'video/webm'
+        });
+
+        let video = {
+          title: 'testRecord',
+          data: file
         }
+        console.log(video.data);
+        postVideo(video);
+
         this.setState({
            recording: false
-           });
+        });
       });
-      // still needs code for handling video blob after recording ends
     }
 
     render() {
@@ -83,7 +92,7 @@ export class Record extends React.Component {
             </div>
 
           <div className='start-stop'>
-         
+
           {this.state.recording ?
           <div>
              <LinearProgress color="secondary" />
@@ -91,7 +100,7 @@ export class Record extends React.Component {
                 Stop Recording
             </Button>
             </div>
-          : 
+          :
           <div>
           <Button variant="raised" style={{backgroundColor:"white"}} fullWidth={true} onClick={this.startRecord}>
                 Start Recording

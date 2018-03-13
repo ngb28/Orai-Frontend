@@ -10,3 +10,4 @@ export const SSOURL = production
 export const SSO_CREATE_URL = `${SSOURL}/signup`;
 // export const lessonsDashboardUri = 'https://lessons.orai.pro';
 
+export const API_URL = 'http://sdesign.tryoratio.com:80';

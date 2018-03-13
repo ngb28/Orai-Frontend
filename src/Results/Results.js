@@ -52,7 +52,7 @@ export class Results extends React.Component {
     };
   }
   seek(seconds) {
-    
+
   }
   getListOfPoses(results){
     return results.map((data, index) =>{
@@ -86,7 +86,7 @@ export class Results extends React.Component {
 
           <List component="nav" className='listclass'>
             {this.getListOfPoses(this.state.results)}
-          </List> 
+          </List>
        </div>
           : <p> Loading Results...</p>
         }
