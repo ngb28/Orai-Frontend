@@ -78,7 +78,10 @@ export class Results extends React.Component {
         <div>
               <Player
                 ref="player"
+                height={500}
+                width={500}
                 fluid={false}
+                style={{'background-color':'transparent'}}
                 className={"videoholder"}
               >
                 <source src={this.state.videosrc} />
