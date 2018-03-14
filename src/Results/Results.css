@@ -1,11 +1,18 @@
 
 
-
+.allresults{
+  margin-left: 30vw;
+  /* margin-left: 100px; */
+  /* float:center; */
+}
 .main-container {
    /* float: right; */
     /* position: relative; */
     /* left: 50%; */
     
+  }
+  .listclass{
+    max-width: 30vw;
   }
 
   .fixer-container {

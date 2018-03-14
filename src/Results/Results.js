@@ -88,7 +88,7 @@ export class Results extends React.Component {
 
 
         {this.state.results ?
-        <div>
+        <div className='allresults'>
         <div className='main-container'>
         <div className='fixer-container'>
               <Player
