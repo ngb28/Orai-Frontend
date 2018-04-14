@@ -11,12 +11,14 @@ export class Home extends React.Component {
     super(props);
 
     this.state = {
-      file:null
+      file:null,
+      title:''
     };
 
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.fileUpload = this.fileUpload.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   onFormSubmit(e){
@@ -27,13 +29,17 @@ export class Home extends React.Component {
   onChange(e) {
     this.setState({file: e.target.files[0]})
   }
+  handleChange(e) {
+    this.setState({title: e.target.value})
+  }
 
   fileUpload(file) {
-    //var stringVid = JSON.stringify(file);
-    //console.log(file);
+
+    console.log(file);
     let video = {
-      title: 'testUp',
-      data: file
+      title: this.state.title,
+      data: file,
+      duration: 0
     }
     return postVideo(video);
   }
@@ -53,7 +59,11 @@ export class Home extends React.Component {
             <li><p style={{color:'black'}}>Or</p></li>
             <li>
               <form onSubmit={this.onFormSubmit}>
-                <input type="file" onChange={this.onChange} />
+                <input style={{color:'black'}} type="file" onChange={this.onChange} />
+                <label style={{color:'black'}}>
+                  Session Title:
+                  <input type="text" value={this.state.title} onChange={this.handleChange}/>
+                </label>
                 <Button variant="raised" type="submit">Upload</Button>
               </form>
             </li>

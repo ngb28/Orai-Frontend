@@ -19,7 +19,7 @@ function postVideo(video) {
     },
     params: {
       title: video.title,
-      duration: 5
+      duration: video.duration
     },
     data: video.data
   }).then(function (response) {
