@@ -1,6 +1,6 @@
 export const production = (window.location.hostname === 'orai.pro' || window.location.hostname === 'orai.prod');
 export const baseEndpoint = production
-  ? 'http://sdesign.tryoratio.com' : 'http://sdesign.tryoratio.com';
+  ? 'https://sdesign.tryoratio.com' : 'https://sdesign.tryoratio.com';
 export const devMode = ['127.0.0.1', 'localhost'].includes(window.location.hostname);
 export const endpoint = `${baseEndpoint}/v1`;
 
@@ -10,4 +10,4 @@ export const SSOURL = production
 export const SSO_CREATE_URL = `${SSOURL}/signup`;
 // export const lessonsDashboardUri = 'https://lessons.orai.pro';
 
-export const API_URL = 'http://sdesign.tryoratio.com:80';
+export const API_URL = 'https://sdesign.tryoratio.com';

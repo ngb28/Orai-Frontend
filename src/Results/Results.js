@@ -33,6 +33,7 @@ export class Results extends React.Component {
   }
 
   componentDidMount() {
+    
     const { sid } = this.props.match.params;
     // console.log(sid);
     var jwt = getCurrentUser();
@@ -44,8 +45,10 @@ export class Results extends React.Component {
       // console.log(response);
       console.log(this.refs)
       this.seek = this.seek.bind(this);
+      // this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
+      
     })
-
+    
     // this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
 
   }
@@ -56,12 +59,14 @@ export class Results extends React.Component {
     // };
   }
   seek(seconds) {
+    console.log(seconds)
     return () => {
       this.refs.player.seek(seconds);
     };
   }
 
   handleStateChange(state, prevState) {
+    // console.log("state change")
     // copy player state to this component's state
     this.setState({
       player: state
